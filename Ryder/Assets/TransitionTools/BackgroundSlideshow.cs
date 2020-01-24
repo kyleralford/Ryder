@@ -7,34 +7,42 @@ public class BackgroundSlideshow : MonoBehaviour
 {
     public Sprite[] images = new Sprite[6];
     [Tooltip("Time, in seconds")]
-    public IntReference timePerImage;
+    public FloatReference timePerImage;
     public IntReference startImage;
+    private float timer = 0.0f;
     private Image image;
     private int currentImage;
 
     void Awake()
     {
         image = gameObject.GetComponent<Image>();
-        currentImage += (startImage.Value - 1);
     }
 
     private void OnEnable()
     {
-        NewImage();
+        currentImage = (startImage.Value - 1);
+        timer = 0.0f;
+        image.sprite = images[currentImage];
     }
 
-    IEnumerator NewImage()
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer > timePerImage.Value)
+        {
+            timer -= timePerImage.Value;
+            AdvanceImage();
+        }
+    }
+
+    public void AdvanceImage()
     {
         currentImage += 1;
-        if (currentImage > images.Length)
+        if (currentImage > (images.Length - 1))
         {
             currentImage = 0;
         }
 
         image.sprite = images[currentImage];
-
-        yield return new WaitForSeconds(timePerImage.Value);
-
-        NewImage();
     }
 }
