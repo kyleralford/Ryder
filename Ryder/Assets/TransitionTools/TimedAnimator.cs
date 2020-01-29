@@ -4,27 +4,39 @@ using UnityEngine;
 
 public class TimedAnimator : MonoBehaviour
 {
-	public StringReference onEnableAnimation;
+    public StringReference onEnableAnimation;
+    public StringReference onDisableAnimation;
     public FloatReference animationBeginTime;
-	private Animator animator;
+    private Animator animator;
     private float timer;
+    private bool updateRunning;
 
-	void Awake()
-	{
-		animator = gameObject.GetComponent<Animator>();
-	}
+    void Awake()
+    {
+        animator = gameObject.GetComponent<Animator>();
+        updateRunning = true;
+    }
+
+    private void OnEnable()
+    {
+        updateRunning = true;
+    }
 
     void Update()
     {
-        timer += Time.deltaTime;
-
-        if (timer > animationBeginTime.Value)
+        if (updateRunning == true)
         {
-            animator.SetTrigger(onEnableAnimation.Value);
+            timer += Time.deltaTime;
 
-            timer = 0;
+            if (timer > animationBeginTime.Value)
+            {
+                animator.SetTrigger(onEnableAnimation.Value);
 
-            enabled = false;
+                timer = 0;
+
+                updateRunning = false;
+
+            }
         }
     }
 }

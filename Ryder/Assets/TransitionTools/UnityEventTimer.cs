@@ -10,7 +10,7 @@ public class UnityEventTimer : MonoBehaviour
     public UnityEvent Event;
     private float timer;
     
-    void ExecuteEvent()
+    public void ExecuteEvent()
     {
         Event.Invoke();
     }
