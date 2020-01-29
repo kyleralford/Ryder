@@ -14,7 +14,7 @@ public class TimedAnimator : MonoBehaviour
 		animator = gameObject.GetComponent<Animator>();
 	}
 
-    private void Update()
+    void Update()
     {
         timer += Time.deltaTime;
 
