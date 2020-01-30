@@ -5,7 +5,6 @@ using UnityEngine;
 public class TimedAnimator : MonoBehaviour
 {
     public StringReference onEnableAnimation;
-    public StringReference onDisableAnimation;
     public FloatReference animationBeginTime;
     private Animator animator;
     private float timer;
