@@ -15,12 +15,12 @@ public class MapMovement : MonoBehaviour
         mapTranslateValue = new Vector3(0, -mapSpeed.Value, 0);
     }
 
-    void MapStart()
+    public void MapStart()
     {
         mapMoving = true;
     }
 
-    void MapStop()
+    public void MapStop()
     {
         mapMoving = false;
     }
@@ -34,7 +34,7 @@ public class MapMovement : MonoBehaviour
             if (distanceTraveled > 300)
             {
                 distanceTraveled -= 300;
-                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 300);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 300, transform.localPosition.z);
             }
         }
     }
