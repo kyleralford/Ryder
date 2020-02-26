@@ -5,6 +5,9 @@ using TMPro;
 
 public class StreetNameCycle : MonoBehaviour
 {
+    public bool isStreetNameRandom = false;
+    [Tooltip("This value does nothing if street names are set to random")]
+    public int streetNameIndex = 0;
     [Tooltip("Time for each street name, in seconds")]
     public FloatReference displayTime;
     [Tooltip("Adds randomness from 0 to this value to display time")]
@@ -21,7 +24,14 @@ public class StreetNameCycle : MonoBehaviour
 
     private void OnEnable()
     {
-        RandomStreetName();
+        if (isStreetNameRandom)
+        {
+            RandomStreetName();
+        }
+        else
+        {
+            NextStreetName();
+        }
         CalculateDisplayTime();
     }
 
@@ -32,7 +42,16 @@ public class StreetNameCycle : MonoBehaviour
         if (timer > displayTimeActual)
         {
             timer -= displayTimeActual;
-            RandomStreetName();
+            if (isStreetNameRandom)
+            {
+                RandomStreetName();
+            }
+            else
+            {
+                NextStreetName();
+            }
+            
+
             CalculateDisplayTime();
         }
     }
@@ -40,6 +59,16 @@ public class StreetNameCycle : MonoBehaviour
     void RandomStreetName()
     {
         textMesh.text = streetNames[Random.Range(0, (streetNames.Length - 1))];
+    }
+
+    void NextStreetName()
+    {
+        textMesh.text = streetNames[streetNameIndex];
+        streetNameIndex += 1;
+        if (streetNameIndex > streetNames.Length)
+        {
+            streetNameIndex = 0;
+        }
     }
 
     void CalculateDisplayTime()
