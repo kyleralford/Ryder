@@ -49,6 +49,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.RawImage
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/MainApp.unity:
     - Class: 1
@@ -112,6 +113,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9504}
     - Class: 114
+      Script: {instanceID: 9506}
+    - Class: 114
       Script: {instanceID: 9776}
     - Class: 114
       Script: {instanceID: 9784}
@@ -122,34 +125,32 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9938}
     - Class: 114
-      Script: {instanceID: 10020}
+      Script: {instanceID: 10022}
     - Class: 114
-      Script: {instanceID: 10118}
-    - Class: 114
-      Script: {instanceID: 10306}
+      Script: {instanceID: 10120}
     - Class: 114
       Script: {instanceID: 10308}
     - Class: 114
-      Script: {instanceID: 10316}
+      Script: {instanceID: 10310}
     - Class: 114
-      Script: {instanceID: 10326}
+      Script: {instanceID: 10318}
     - Class: 114
-      Script: {instanceID: 10352}
+      Script: {instanceID: 10328}
     - Class: 114
-      Script: {instanceID: 10476}
+      Script: {instanceID: 10354}
     - Class: 114
-      Script: {instanceID: 10732}
+      Script: {instanceID: 10478}
     - Class: 114
-      Script: {instanceID: 10814}
+      Script: {instanceID: 10734}
     - Class: 114
-      Script: {instanceID: 10876}
+      Script: {instanceID: 10816}
+    - Class: 114
+      Script: {instanceID: 10878}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 157
-      Script: {instanceID: 0}
-    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -768,6 +769,12 @@ ScriptsOnlyBuild:
     className: MapMovement
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OnEnableDebug
+  - hash:
+      serializedVersion: 2
       Hash: 61b9d9b6f4b6a222dfea8b131b3d3227
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -780,7 +787,7 @@ ScriptsOnlyBuild:
     className: TMP_Asset
   - hash:
       serializedVersion: 2
-      Hash: a709eb237a85fe1f64cff38193d7ac32
+      Hash: c7cd98c1147547ce2cdca106d0dd9e99
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StreetNameCycle
@@ -1027,4 +1034,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainApp.unity
-  playerPath: C:/Users/user/Dropbox/Unity/Ryder 0.1.apk
+  playerPath: C:/Users/user/Dropbox/Unity/Space Dust 0.0.4.apk
